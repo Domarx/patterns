@@ -1,10 +1,12 @@
-package abstract
+package internal
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type smsFactory struct{}
+type SMSFactory struct{}
 
-func (s *smsFactory) CreateMessenger() Messenger {
+func (s *SMSFactory) CreateMessenger() Messenger {
 	return &sms{}
 }
 
@@ -12,7 +14,10 @@ type sms struct {
 	baseSender
 }
 
-func (s *sms) SetRecipient(recipient string) Sender { s.baseSender.recipient = recipient; return s }
+func (s *sms) SetRecipient(recipient string) Sender {
+	s.baseSender.recipient = recipient
+	return s
+}
 
 func (s *sms) SetMessage(message []byte) Sender { s.baseSender.message = message; return s }
 

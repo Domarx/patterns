@@ -1,13 +1,11 @@
-package abstract
+package internal
 
 import "fmt"
 
-type emailFactory struct {
-	email email
-}
+type EmailFactory struct{}
 
-func (e *emailFactory) CreateMessenger() Messenger {
-	return &e.email
+func (e *EmailFactory) CreateMessenger() Messenger {
+	return &email{}
 }
 
 type email struct {
