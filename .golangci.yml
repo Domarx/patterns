@@ -265,7 +265,6 @@ linters:
     - gocyclo
     - gofmt
     - goimports
-    - golint
     - gomnd
     - goprintffuncname
     - gosec
@@ -279,6 +278,7 @@ linters:
   disable:
     - maligned
     - prealloc
+    - golint
   disable-all: false
   presets:
     - bugs
