@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/domarx/patterns/singleton"
+	"github.com/domarx/patterns/creational/singleton"
 )
 
 func main() {
