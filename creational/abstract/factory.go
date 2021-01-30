@@ -1,6 +1,12 @@
 package abstract
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/domarx/patterns/creational/abstract/internal"
+)
+
+type Messenger = internal.Messenger
 
 type senderType int
 
@@ -12,9 +18,9 @@ const (
 func NewSenderFactory(sender senderType) (factory MessengerFactory, err error) {
 	switch sender {
 	case Email:
-		factory = &emailFactory{}
+		factory = &internal.EmailFactory{}
 	case SMS:
-		factory = &smsFactory{}
+		factory = &internal.SMSFactory{}
 	default:
 		err = fmt.Errorf("no sender of such type %d", sender)
 	}
@@ -23,14 +29,4 @@ func NewSenderFactory(sender senderType) (factory MessengerFactory, err error) {
 
 type MessengerFactory interface {
 	CreateMessenger() Messenger
-}
-
-type Sender interface {
-	SetRecipient(recipient string) Sender
-	SetMessage(message []byte) Sender
-}
-
-type Messenger interface {
-	Sender
-	Send() error
 }
