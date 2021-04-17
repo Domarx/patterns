@@ -27,5 +27,5 @@ jobs:
 
     - name: Test
       run: go test -v ./...
-       env:
+      env:
         GOPATH: /home/runner/work/patterns/go
