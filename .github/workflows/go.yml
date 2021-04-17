@@ -23,9 +23,9 @@ jobs:
     - name: Build
       run: go build -v ./...
       env:
-        GOPATH: /home/runner/work/patterns/go
+        GOPATH: /home/runner/work/patterns/patterns/go
 
     - name: Test
       run: go test -v ./...
       env:
-        GOPATH: /home/runner/work/patterns/go
+        GOPATH: /home/runner/work/patterns/patterns/go
